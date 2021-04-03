@@ -21,7 +21,7 @@ namespace FizzBuzzApplication.Test.Controller
     public class FizzBuzzControllerTest
     {
         /// <summary>
-        /// FizzBuzzRepository class instance
+        /// FizzBuzzRepository class
         /// </summary>
         private readonly Mock<IFizzBuzzRepository> mockFizzBuzzRepository;
 
