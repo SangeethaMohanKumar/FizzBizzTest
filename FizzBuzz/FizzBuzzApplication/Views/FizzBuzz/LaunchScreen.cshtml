@@ -1,0 +1,20 @@
+﻿@model FizzBuzzApplication.Models.FizzBuzzModel
+
+@{
+    ViewBag.Title = "LaunchScreen";
+}
+
+<h4>Fizz Buzz Application</h4>
+<body>
+    @using (Html.BeginForm("DisplayResult", "FizzBuzz", FormMethod.Post, Model))
+    {
+        <div>
+            Enter a positive integer between 1 to 1000 : @Html.TextBoxFor(model => model.UserEnteredNumber) 
+            @Html.ValidationMessageFor(model => model.UserEnteredNumber, "", new { @class = "text-danger" })               
+        </div>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    }
+</body>
+

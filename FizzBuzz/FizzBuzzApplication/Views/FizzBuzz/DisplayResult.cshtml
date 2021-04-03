@@ -1,0 +1,28 @@
+﻿@using PagedList.Mvc;
+@model FizzBuzzApplication.Models.FizzBuzzModel
+@{
+    ViewBag.Title = "DisplayResult";
+}
+<div>
+    @Html.ActionLink("Back to Launch Screen", "LaunchScreen")
+</div>
+<h4>Fizz Buzz Result</h4>
+<body>
+    <div>
+        @foreach (var item in Model.FizzBuzzResult)
+        {
+            var values = item.Split(' ');
+            <div>
+                @foreach (var data in values)
+                {
+                    <span>@Html.Label(data, htmlAttributes: new { @class = data })</span>
+                }
+            </div>
+        }        
+    </div>
+    <div id='Paging'>
+        @Html.PagedListPager(Model.FizzBuzzResult, page => Url.Action("GetPageDetails", new { page, userEnteredNumber = Model.UserEnteredNumber }))
+    </div>
+
+</body>
+
